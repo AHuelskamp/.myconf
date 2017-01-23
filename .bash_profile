@@ -187,5 +187,5 @@ math()
 
 
 #git hub manage dot files 
-alias config=/usr/bin/git --git-dir=$HOME/GitHub/dot-files --work-tree=$HOME
+alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
