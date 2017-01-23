@@ -1,0 +1,27 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = Tess Huelskamp
+	email = tess.huelskamp@gmail.com
+[core]
+	editor = vim
+	excludesfile = /Users/TessHuelskamp/.gitignore
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%C(yellow)%d %Cgreen%cr %Cblue%an%Creset %s' --date=relative --all
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	co = checkout
+	cob = checkout -b
+	st = status
+	s = status
+	br = branch
+	cm = commit -m
+	bav = branch -av
+	rav = remote -v
+	bd = branch -D
+    ammend = commit --amend
+	d = diff
+
+
