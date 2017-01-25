@@ -189,3 +189,6 @@ math()
 #git hub manage dot files 
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
+#heh heh 
+alias rr="echo 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' | pbcopy" 
+
