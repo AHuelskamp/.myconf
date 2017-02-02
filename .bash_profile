@@ -71,6 +71,7 @@ alias gpo="git push origin"
 alias gcb="git checkout -b" 
 alias gpom="git push origin master" 
 alias glom="git pull origin master" 
+alias gprom="git pull --rebase origin master" 
 alias gfom="git fetch origin master" 
 alias gmom="git merge origin master" 
 
@@ -114,6 +115,16 @@ toIcer()
 toArctic()
 {
     scp $@ huelska1@arctic.cse.msu.edu:~/scpdrop
+}
+
+toMe()
+{
+    scp $@ tess@huelskamp.io:~/scpdrop
+}
+
+fromMe()
+{
+    scp tess@huelskamp.io:~/scpdrop/*
 }
 
 fromIcer()
