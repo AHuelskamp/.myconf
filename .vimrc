@@ -51,3 +51,6 @@ set expandtab
 autocmd BufRead,BufNew *.md set filetype=markdown
 " Set tabs to 2 spaces in .mg 
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
+
+" search cleared ,/
+nnoremap <silent> ,/ :nohlsearch<CR>
