@@ -203,3 +203,10 @@ alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 #heh heh 
 alias rr="echo 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' | pbcopy" 
 
+#add emcc to path. . . 
+emcLoc="/Users/TessHuelskamp/GitHub/emsdk_portable"
+if [ -f "$emcLoc/emsdk_env.sh" ] ; then 
+	PATH="${PATH}:$HOME/bin" 
+    source $emcLoc/emsdk_env.sh
+fi
+
