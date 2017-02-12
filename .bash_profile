@@ -207,6 +207,6 @@ alias rr="echo 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' | pbcopy"
 emcLoc="/Users/TessHuelskamp/GitHub/emsdk_portable"
 if [ -f "$emcLoc/emsdk_env.sh" ] ; then 
 	PATH="${PATH}:$HOME/bin" 
-    source $emcLoc/emsdk_env.sh
+    source $emcLoc/emsdk_env.sh > /dev/null
 fi
 
