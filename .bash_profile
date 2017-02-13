@@ -45,7 +45,7 @@ STICKY=~/GitHub/my-notes/sticky.md
 SAVE=~/GitHub/my-notes/update-this-repo.sh
 NOTESDIR=~/GitHub/my-notes/
 
-alias notes="cd $NOTES"
+alias notes="cd $NOTESDIR"
 
 alias vsticky="vim $STICKY"
 alias gsticky="cat $STICKY | grep" 
