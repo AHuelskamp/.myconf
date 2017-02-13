@@ -54,3 +54,9 @@ autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
 
 " search cleared ,/
 nnoremap <silent> ,/ :nohlsearch<CR>
+
+" ty: http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+" for the following settings
+" side note to self, should read/learning vi/m
+set relativenumber
+set encoding=utf-8
