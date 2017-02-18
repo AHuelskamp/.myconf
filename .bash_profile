@@ -74,6 +74,7 @@ alias glom="git pull origin master"
 alias gprom="git pull --rebase origin master" 
 alias gfom="git fetch origin master" 
 alias gmom="git merge origin master" 
+alias gp="git push" 
 
 
 #shutdown 
