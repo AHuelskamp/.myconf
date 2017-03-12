@@ -27,6 +27,7 @@ alias topten="ls -t | head"
 alias tt="ls -t | head" 
 #no spaces and then get rid of duplicate -'s 
 alias nospace='rename  -e "s, ,-,g" * ;  rename -e "s,-[-]*,-,g" *' #who does that anyways?
+alias cdd="cd .."
 
 #schenanigans
 alias http="python -m SimpleHTTPServer" 
@@ -186,12 +187,13 @@ fi
 
 #Gaussview Installed 1-15-15
 #needed to comment out a line somewhere. 
-#export g09root=/Applications
-#. ${g09root}/g09/bsd/g09.profile
-#export GAUSS_SCRDIR=~/Gaussian
+export g09root=/Applications
+. ${g09root}/g09/bsd/g09.profile
+export GAUSS_SCRDIR=~/Gaussian
 
 alias sl="ls -G" #sl is some gaussian shit 
 
+#Should learn real thing...
 math()
 {
     python -c "print($@)"
