@@ -60,3 +60,6 @@ nnoremap <silent> ,/ :nohlsearch<CR>
 " side note to self, should read/learning vi/m
 set relativenumber
 set encoding=utf-8
+
+" cpp tabs
+autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
