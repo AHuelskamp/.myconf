@@ -25,6 +25,7 @@ alias first="head -1"
 alias taill="tail -1" #last is a system command
 alias topten="ls -t | head" 
 alias tt="ls -t | head" 
+alias ttt="ls -t | head -1"
 #no spaces and then get rid of duplicate -'s 
 alias nospace='rename  -e "s, ,-,g" * ;  rename -e "s,-[-]*,-,g" *' #who does that anyways?
 alias cdd="cd .."
