@@ -1,0 +1,106 @@
+#!/bin/bash 
+
+#Default latex file and most of the libraries I usually use. 
+#Nowhere close to being a good latexing practice 
+
+TITLE=$1
+if [[ "$TITLE" = "" ]]
+then 
+    TITLE=TITLE
+fi
+
+echo "
+\documentclass[12pt]{article}
+
+\usepackage[left=.5in,right=.5in,top=.25in,bottom=.25in]{geometry}
+%\usepackage[margin=0.5in, landscape, twocolumn]{geometry}
+
+\usepackage{qtree}
+\usepackage{tikz-qtree}
+\usepackage{amsmath}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{comment}
+\usepackage{titling}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage[colorlinks, urlcolor=blue]{hyperref}
+\usepackage{booktabs} %pretty tables
+\usepackage{listings} %pretty code
+\usepackage{gb4e} 
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\question}[1]{\textit{#1}}
+\newcommand{\myemail}{\href{mailto:huelska1@msu.edu}{\color{black}{huelska1@msu.edu}}}
+\newcommand{\tran}[1]{\textsc{t}(\textit{#1})}
+
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1ex}
+
+%Title Stuff
+\begin{document}
+\title{$TITLE \vspace{-2ex}}
+\author{Tess Huelskamp\\\\ \myemail \\\\Michigan State University}
+\date{ \today } 
+\maketitle
+
+\begin{comment}
+%COMMENTS 
+\href{google.com}{here}
+
+\begin{enumerate}[a.]
+\item
+\end{enumerate}
+
+\lstset{caption={Part 1 - Simple For Loop}}
+\begin{lstlisting}
+\end{lstlisting}
+OR
+\lstinputlisting{source_filename.py}
+
+The shit in \ref{BASIC}
+\begin{exe}1
+    \ex \label{BASIC}
+    \begin{xlist}
+        \ex John picked up the ball
+        \ex John picked the ball up
+    \end{xlist}
+    \ex
+    \begin{xlist}\label{MODAL}
+        \ex I should've picked up the ball 
+        \ex I should've picked the ball up
+    \end{xlist}
+\end{exe}
+
+%COMMENTS 
+\end{comment}
+
+
+
+%END PREAMBLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+" | pbcopy 
+
