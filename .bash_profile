@@ -33,6 +33,7 @@ alias cdd="cd .."
 #schenanigans
 alias http="python -m SimpleHTTPServer" 
 alias rot13='tr "A-Za-z" "N-ZA-Mn-za-m"'
+alias e='tr e E'
 
 #log onto the pi. 
 #only works on home network 
