@@ -34,6 +34,7 @@ alias cdd="cd .."
 alias http="python -m SimpleHTTPServer" 
 alias rot13='tr "A-Za-z" "N-ZA-Mn-za-m"'
 alias e='tr e E'
+alias ehh="echo ¯\\\_\(ツ\)_/¯ | pbcopy"
 
 #log onto the pi. 
 #only works on home network 
