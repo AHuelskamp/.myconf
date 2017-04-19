@@ -9,3 +9,10 @@ out
 *.pkl
 *cfg
 *csv
+
+# latex
+*aux
+*log
+*pdf
+*gz
+*out
