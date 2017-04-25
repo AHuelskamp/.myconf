@@ -114,7 +114,7 @@ alias oo="open ."  #open the current directory in finder.
 #transfering files
 toIcer()
 {
-    scp $@ huelska1@gateway.hpcc.msu.edu:~/scpdrop
+    scp $@ huelska1@rsync.hpcc.msu.edu:~/scpdrop
 }
 
 toArctic()
@@ -134,7 +134,7 @@ fromMe()
 
 fromIcer()
 {
-    scp huelska1@gateway.hpcc.msu.edu:~/scpdrop/* . 
+    scp huelska1@rsync.hpcc.msu.edu:~/scpdrop/* . 
 }
 
 fromArctic()
