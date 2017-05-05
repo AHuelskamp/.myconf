@@ -27,7 +27,7 @@ echo "
 \usepackage[colorlinks, urlcolor=blue]{hyperref}
 \usepackage{booktabs} %pretty tables
 \usepackage{listings} %pretty code
-\usepackage{gb4e} 
+\usepackage{gb4e}  %examples
 
 \newcommand{\code}[1]{\texttt{#1}}
 \newcommand{\question}[1]{\textit{#1}}
