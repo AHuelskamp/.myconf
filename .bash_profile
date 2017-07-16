@@ -36,13 +36,6 @@ alias rot13='tr "A-Za-z" "N-ZA-Mn-za-m"'
 alias e='tr e E'
 alias ehh="echo ¯\\\_\(ツ\)_/¯ | pbcopy"
 
-#log onto the pi. 
-#only works on home network 
-alias pii="ssh pi@192.168.1.162"
-
-
-
-
 #file where I keep my notes. 
 #kept under VC 
 STICKY=~/GitHub/my-notes/sticky.md
@@ -111,61 +104,6 @@ alias skl="cd ~/Desktop/School" #this is the logical location
 alias gitt="cd $GITT"
 alias oo="open ."  #open the current directory in finder. 
 
-#transfering files
-toIcer()
-{
-    scp $@ huelska1@rsync.hpcc.msu.edu:~/scpdrop
-}
-
-toArctic()
-{
-    scp $@ huelska1@arctic.cse.msu.edu:~/scpdrop
-}
-
-toMe()
-{
-    scp $@ tess@huelskamp.io:~/scpdrop
-}
-
-fromMe()
-{
-    scp tess@huelskamp.io:~/scpdrop/*
-}
-
-fromIcer()
-{
-    scp huelska1@rsync.hpcc.msu.edu:~/scpdrop/* . 
-}
-
-fromArctic()
-{
-    scp huelska1@arctic.cse.msu.edu:~/scpdrop/* . 
-}
-
-wgetap()
-{
-    wget --user=huelska1 --ask-password $1
-}
-
-
-#ssh
-alias work="ssh huelska1@gateway.hpcc.msu.edu"
-alias workX="ssh -Y huelska1@gateway.hpcc.msu.edu"
-alias icer="ssh huelska1@gateway.hpcc.msu.edu"
-#alias icer="ssh huelska1@gateway-01.hpcc.msu.edu"
-alias icerX="ssh -Y huelska1@gateway-01.hpcc.msu.edu"
-alias wrok="ssh huelska1@gateway.hpcc.msu.edu"
-alias north="ssh huelska1@north.cse.msu.edu"
-alias northX="ssh -Y huelska1@north.cse.msu.edu"
-alias arctic="ssh huelska1@arctic.cse.msu.edu"
-alias black="ssh huelska1@black.cse.msu.edu"
-alias aws="ssh -i /Users/TessHuelskamp/.ssh/AWS_Key_Pair.pem ubuntu@54.148.154.83"
-alias digitalOcean="ssh -i /Users/TessHuelskamp/.ssh/digitalOcean tess@198.211.105.196"
-alias csesftp="sftp huelska1@arctic.cse.msu.edu"
-alias CSEsftp="sftp huelska1@arctic.cse.msu.edu"
-alias worksftp="sftp huelska1@gateway.hpcc.msu.edu"
-alias hadoop="ssh huelska1@hadoop1.cse.msu.edu"
-
 #default is overriden by further commands. 
 
 # Setting PATH so that I don't need ./ for exe's
@@ -190,9 +128,9 @@ fi
 
 #Gaussview Installed 1-15-15
 #needed to comment out a line somewhere. 
-export g09root=/Applications
-. ${g09root}/g09/bsd/g09.profile
-export GAUSS_SCRDIR=~/Gaussian
+#export g09root=/Applications
+#. ${g09root}/g09/bsd/g09.profile
+#export GAUSS_SCRDIR=~/Gaussian
 
 alias sl="ls -G" #sl is some gaussian shit 
 
@@ -201,7 +139,6 @@ math()
 {
     python -c "print($@)"
 }
-
 
 #git hub manage dot files 
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
