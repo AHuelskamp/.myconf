@@ -7,6 +7,7 @@ alias qq="exit"
 alias ll="ls -althG"
 alias lll="ls -althG@" 
 alias ls="ls -G" #G is the mac color flag 
+alias lsd="ls -d */"
 alias cp="cp -i"
 alias mv="mv -i"
 alias df="df -h"
@@ -103,6 +104,12 @@ alias odwon="open ~/Downloads"
 alias skl="cd ~/Desktop/School" #this is the logical location
 alias gitt="cd $GITT"
 alias oo="open ."  #open the current directory in finder. 
+
+#cd and ls the contents of a directory
+#fail if cd unsuccessful
+cdl() {
+    cd $1 && ls
+}
 
 #default is overriden by further commands. 
 
