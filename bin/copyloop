@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# place all lines of a file into copy paste buffer one by one
+# I've wanted to do this a couple times, ¯\_(ツ)_/¯, so I wrote this
+
+# only works on mac
+# (I haven't learned how to mess with the paste buffer on other systems)
+# should, in theory, be doable
+
+# grab file name from command line args
+# not dealing with opts or pipes for now...
+
+if [ -z "$1" ]; then
+    echo Usage: $0 FILENAME >&2
+    exit 1
+else
+    filename="$1"
+fi
+
+if [ ! -f "$filename" ]
+    echo $filename isnt a file. >&2
+    exit
+fi
+
+
+# the read -u 3 and 3< syntax allows the inner body of the loop to read from
+# standard in (0). Without this the file will clobber the second readline.  3
+# can be replaced with any other valid descriptor (0, 1, and 2 are taken by
+# stdin, stdout, and stderror)
+
+while read -u 3 line; do
+
+    #direct file to copy paste buffer and display on screen
+    echo $line | pbcopy
+    echo -n "$line"
+
+    #wait for user to hit enter button
+    read enter
+
+done 3<"$filename"
