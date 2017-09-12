@@ -63,3 +63,10 @@ set encoding=utf-8
 
 " cpp tabs
 autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
+
+
+try
+    source ~/.abrv.vim
+catch
+    " pass if file not there
+endtry

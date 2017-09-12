@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# This grabs all of the system level keyboard shortcuts and then drops them into
+# the .vimrc file as abbreviations so that as you're editing files in vim things
+# automatially expand.
+#
+# Is this necessary? Probably not...  
+
+VIM_FILE=".abrv.vim"
+DB_EXE="sqlite3"
+DB_NAME="UserDictionary.db"
+DB_CMD="select zshortcut, zphrase from ZUSERDICTIONARYENTRY;"
+
+# For some reason, there are two of these files on my main computer.
+# `head -1` "fixes" the issue of that until I want to do it right
+DB_FILE=$(find ~/Library/Dictionaries/CoreDataUbiquitySupport/ -name $DB_NAME | head -1)
+
+IFS=$'\n'
+# redirect and overwrite to vim output file
+# this does mean that your ~/.vimrc needs this line:
+# `source $VIM_FILE`
+{
+    echo \" vim abbreviation file
+    for line in $($DB_EXE $DB_FILE $DB_CMD); do
+
+        # Delimiter used is a pipe for some reason
+        # This does mean that our shortcuts can never have pipes in them
+        # But I'm okay with that
+        IFS=$'|'
+        declare -a entry=($line)
+
+        abrv="${entry[0]}"
+        expansion="${entry[1]}"
+
+
+        # check to see if expansion is empty
+        if [ -z "$expansion" ]; then
+            #echo $abrv has no expansion $expansion
+            continue
+        fi
+
+        # check to see if abrv is in expansion
+        # if it is, recursion is bad and can crash vim.
+        # for some reason this only works if the *'s are in the second field
+        if [[ "$expansion" == *"$abrv"* ]]; then
+            #echo $abrv is in expansion $expansion
+            continue
+        fi
+
+        #write things to vim save file
+        echo ':ab' $abrv $expansion
+
+        IFS=$'\n'
+    done
+} > ~/"$VIM_FILE"
+
+
+
+IFS=$' \t\n'
