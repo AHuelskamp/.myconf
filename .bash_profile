@@ -5,40 +5,40 @@ alias bb="$(pbpaste)"
 alias xx="exit"
 alias qq="exit"
 alias ll="ls -althG"
-alias lll="ls -althG@" 
-alias ls="ls -G" #G is the mac color flag 
+alias lll="ls -althG@"
+alias ls="ls -G" #G is the mac color flag
 alias lsd="ls -d */"
 alias cp="cp -i"
 alias mv="mv -i"
 alias df="df -h"
 alias du="du -h"
-alias pgrep="pgrep -a" 
-alias locate="locate -i" 
+alias pgrep="pgrep -a"
+alias locate="locate -i"
 alias grep="grep -i --color=auto"
-alias gg="grep -i --color=auto" 
+alias gg="grep -i --color=auto"
 alias cc="clear"
 alias cd..="cd .."
 alias :wq="" #do nothing
 alias :q="" #do nothing
 alias wq="" #do nothing
 alias path="echo $PATH"
-alias first="head -1" 
+alias first="head -1"
 alias taill="tail -1" #last is a system command
-alias topten="ls -t | head" 
-alias tt="ls -t | head" 
+alias topten="ls -t | head"
+alias tt="ls -t | head"
 alias ttt="ls -t | head -1"
-#no spaces and then get rid of duplicate -'s 
+#no spaces and then get rid of duplicate -'s
 alias nospace='rename  -e "s, ,-,g" * ;  rename -e "s,-[-]*,-,g" *' #who does that anyways?
 alias cdd="cd .."
 
 #schenanigans
-alias http="python -m SimpleHTTPServer" 
+alias http="python -m SimpleHTTPServer"
 alias rot13='tr "A-Za-z" "N-ZA-Mn-za-m"'
 alias e='tr e E'
 alias ehh="echo ¯\\\_\(ツ\)_/¯ | pbcopy"
 
-#file where I keep my notes. 
-#kept under VC 
+#file where I keep my notes.
+#kept under VC
 STICKY=~/GitHub/my-notes/sticky.md
 SAVE=~/GitHub/my-notes/update-this-repo.sh
 NOTESDIR=~/GitHub/my-notes/
@@ -46,7 +46,7 @@ NOTESDIR=~/GitHub/my-notes/
 alias notes="cd $NOTESDIR"
 
 alias vsticky="vim $STICKY"
-alias gsticky="cat $STICKY | grep" 
+alias gsticky="cat $STICKY | grep"
 wsticky(){ echo $@ >> $STICKY;}
 ssticky(){ $SAVE $@; }
 
@@ -55,34 +55,34 @@ ssticky(){ $SAVE $@; }
 alias v="vim"
 alias py3="python3"
 alias sublime="sublime\ text"
-alias openf="open -a firefox" 
+alias openf="open -a firefox"
 
-#git 
-alias g="git" 
+#git
+alias g="git"
 alias gd="git diff"
-alias ga="git add" 
-alias gau="git add -u" 
-alias gcm="git commit -m" 
+alias ga="git add"
+alias gau="git add -u"
+alias gcm="git commit -m"
 alias gs="git status"
-alias gc="git checkout" 
-alias gpo="git push origin" 
-alias gcb="git checkout -b" 
-alias gpom="git push origin master" 
-alias glom="git pull origin master" 
-alias gprom="git pull --rebase origin master" 
-alias gfom="git fetch origin master" 
-alias gmom="git merge origin master" 
-alias gp="git push" 
+alias gc="git checkout"
+alias gpo="git push origin"
+alias gcb="git checkout -b"
+alias gpom="git push origin master"
+alias glom="git pull origin master"
+alias gprom="git pull --rebase origin master"
+alias gfom="git fetch origin master"
+alias gmom="git merge origin master"
+alias gp="git push"
 
 
-#shutdown 
+#shutdown
 alias bye="sudo shutdown -h now"
 alias bai="sudo shutdown -h now"
 alias restart="sudo shutdown -r now"
 
-#editing profile easily 
-alias epro="vim ~/.bash_profile" 
-alias ee="vim ~/.bash_profile" 
+#editing profile easily
+alias epro="vim ~/.bash_profile"
+alias ee="vim ~/.bash_profile"
 alias ss="source ~/.bash_profile"
 
 #locations
@@ -103,7 +103,7 @@ alias odown="open ~/Downloads"
 alias odwon="open ~/Downloads"
 alias skl="cd ~/Desktop/School" #this is the logical location
 alias gitt="cd $GITT"
-alias oo="open ."  #open the current directory in finder. 
+alias oo="open ."  #open the current directory in finder.
 
 #cd and ls the contents of a directory
 #fail if cd unsuccessful
@@ -111,20 +111,20 @@ cdl() {
     cd $1 && ls
 }
 
-#default is overriden by further commands. 
+#default is overriden by further commands.
 
 # Setting PATH so that I don't need ./ for exe's
 #PATH="${PATH}:."
 #export PATH
 
-#add home/bin if exists 
-if [ -d "/usr/local/sbin/" ] ; then 
+#add home/bin if exists
+if [ -d "/usr/local/sbin/" ] ; then
 	PATH="${PATH}:/usr/local/sbin"
 fi
 
-#add usr/local/sbin if exists 
-if [ -d "$HOME/bin" ] ; then 
-	PATH="${PATH}:$HOME/bin" 
+#add usr/local/sbin if exists
+if [ -d "$HOME/bin" ] ; then
+	PATH="${PATH}:$HOME/bin"
 fi
 
 # Commented out bc who needs python 2?
@@ -134,12 +134,12 @@ fi
 #export PATH
 
 #Gaussview Installed 1-15-15
-#needed to comment out a line somewhere. 
+#needed to comment out a line somewhere.
 #export g09root=/Applications
 #. ${g09root}/g09/bsd/g09.profile
 #export GAUSS_SCRDIR=~/Gaussian
 
-alias sl="ls -G" #sl is some gaussian shit 
+alias sl="ls -G" #sl is some gaussian shit
 
 #Should learn real thing...
 math()
@@ -147,15 +147,15 @@ math()
     python -c "print($@)"
 }
 
-#git hub manage dot files 
+#git hub manage dot files
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
-#heh heh 
-alias rr="echo 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' | pbcopy" 
+#heh heh
+alias rr="echo 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' | pbcopy"
 
-#add emcc to path. . . 
+#add emcc to path. . .
 emcLoc="/Users/TessHuelskamp/GitHub/emsdk_portable"
-if [ -f "$emcLoc/emsdk_env.sh" ] ; then 
+if [ -f "$emcLoc/emsdk_env.sh" ] ; then
     source $emcLoc/emsdk_env.sh > /dev/null
 fi
 

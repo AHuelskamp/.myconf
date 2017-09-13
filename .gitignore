@@ -1,6 +1,6 @@
-*.swp 
-*.o 
-__pycache__ 
+*.swp
+*.o
+__pycache__
 notes/
 .DS_Store
 a.out

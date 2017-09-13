@@ -1,11 +1,11 @@
-#!/bin/bash 
+#!/bin/bash
 
-#Default latex file and most of the libraries I usually use. 
-#Nowhere close to being a good latexing practice 
+#Default latex file and most of the libraries I usually use.
+#Nowhere close to being a good latexing practice
 
 TITLE=$1
 if [[ "$TITLE" = "" ]]
-then 
+then
     TITLE=TITLE
 fi
 
@@ -42,11 +42,11 @@ echo "
 \begin{document}
 \title{$TITLE \vspace{-2ex}}
 \author{Tess Huelskamp\\\\ \myemail \\\\Michigan State University}
-\date{ \today } 
+\date{ \today }
 \maketitle
 
 \begin{comment}
-%COMMENTS 
+%COMMENTS
 \href{google.com}{here}
 
 \begin{enumerate}[a.]
@@ -68,12 +68,12 @@ The shit in \ref{BASIC}
     \end{xlist}
     \ex
     \begin{xlist}\label{MODAL}
-        \ex I should've picked up the ball 
+        \ex I should've picked up the ball
         \ex I should've picked the ball up
     \end{xlist}
 \end{exe}
 
-%COMMENTS 
+%COMMENTS
 \end{comment}
 
 
@@ -102,5 +102,5 @@ The shit in \ref{BASIC}
 
 
 \end{document}
-" | pbcopy 
+" | pbcopy
 

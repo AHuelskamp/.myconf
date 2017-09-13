@@ -1,5 +1,5 @@
-" enable latex plugin 
-filetype plugin on 
+" enable latex plugin
+filetype plugin on
 
 " encoding ¯\_(ツ)_/¯
 set encoding=utf-8
@@ -24,7 +24,7 @@ syntax on
 set ignorecase
 set smartcase
 set incsearch
-set hlsearch 
+set hlsearch
 nnoremap <silent> ,/ :nohlsearch<CR>
 
 " Line nos

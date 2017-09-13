@@ -4,7 +4,7 @@
 # the .vimrc file as abbreviations so that as you're editing files in vim things
 # automatially expand.
 #
-# Is this necessary? Probably not...  
+# Is this necessary? Probably not...
 
 VIM_FILE=".abrv.vim"
 DB_EXE="sqlite3"
