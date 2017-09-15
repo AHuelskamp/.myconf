@@ -9,20 +9,22 @@
     editor = vim
     excludesfile = /Users/TessHuelskamp/.gitignore
 [alias]
-    lg = log --graph --pretty=format:'%Cred%h%C(yellow)%d %Cgreen%cr %Cblue%an%Creset %s' --date=relative --all
-    last = log -1 HEAD
-    unstage = reset HEAD --
-    co = checkout
-    cob = checkout -b
-    st = status
-    s = status
+    a = add
+    amend = commit --amend
+    ammend = commit --amend
+    bav = branch -av
+    bd = branch -D
     br = branch
     cm = commit -m
-    bav = branch -av
-    rav = remote -v
-    bd = branch -D
-    ammend = commit --amend
+    co = checkout
+    cob = checkout -b
     d = diff
+    last = log -1 HEAD
+    lg = log --graph --pretty=format:'%Cred%h%C(yellow)%d %Cgreen%cr %Cblue%an%Creset %s' --date=relative --all
+    rav = remote -v
+    s = status
+    st = status
+    unstage = reset HEAD --
 
 
 [push]
