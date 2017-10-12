@@ -36,7 +36,9 @@ set list
 
 " Map ; to : to reduce the number of keystrokes it takes to exit.
 " This one's one of my favorites.
+" Add in semi-colon to repeat previous `f` or `t` operator
 nnoremap ; :
+nnoremap : ;
 
 " Set command height to 2
 set cmdheight=2
