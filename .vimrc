@@ -28,7 +28,15 @@ set hlsearch
 nnoremap <silent> ,/ :nohlsearch<CR>
 
 " Line nos
+" I'm intending to set the current number on the line I'm on and then set rel
+" numbers everywhere else. This works on some systems and not on others.
+" Haven't got around to figuring out why not yet.
 set relativenumber
+set number
+
+" automatically search and reaplace all matches
+" g toggles off (instead of on)
+set gdefault
 
 " Display trailing white space
 set listchars=tab:..,trail:_,extends:>,precedes:<,nbsp:~
@@ -56,10 +64,12 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+" Markdown command
 " Fix issue where *.md only highlights correctly when *.markdown
 autocmd BufRead,BufNew *.md set filetype=markdown
 " Set tabs to 2 spaces in .md
-autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
+" Set text width to 80
+autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 textwidth=80
 
 " cpp tabs
 autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
