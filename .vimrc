@@ -57,6 +57,11 @@ set magic
 " Tabs->4spaces
 filetype indent on
 
+" These settings make sure indents work correctly when writing bulleted lists
+" in markdown (previously, the third line would start at col 0 (instead of
+" where it should be indent-wise)
+set autoindent smartindent
+
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
