@@ -59,7 +59,7 @@ alias rot13='tr "A-Za-z" "N-ZA-Mn-za-m"'
 alias e='tr e E'
 
 if [[ -z $(hash pbcopy) ]]; then
-    alias ehh="echo ¯\\\_\(ツ\)_/¯ | pbcopy"
+    alias ehh="echo -n ¯\\\_\(ツ\)_/¯ | pbcopy"
     alias rr="echo 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' | pbcopy"
 fi
 
