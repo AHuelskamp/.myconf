@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# To change the location of where your screenshots are written to run:
+# `write com.apple.screencapture location $AN_EXISTING_DIR
+
+TESS_SCREENSHOTS=~/screenshots/
+TESS_FORMAT="Screen Shot *png"
+
+
+firstFile=$(ls -t $TESS_SCREENSHOTS | head -1)
+
+if [[ ! $firstFile =~ Screen* ]]; then
+    echo $firsFile doesnt match expected format
+    exit
+fi
+
+newFileName="$*"
+
+# always whack on png
+if [[ -z "$newFileName" ]]; then
+    echo no args
+    exit
+fi
+
+
+if [[ ! $newFileName =~ \.png$ ]]; then
+    newFileName="$newFileName.png"
+fi
+
+if [[ -f "$TESS_SCREENSHOTS/$newFileName" ]]; then
+    echo File name $newFileName aleady exists. exiting
+    exit
+fi
+
+mv -n "$TESS_SCREENSHOTS/$firstFile" "$TESS_SCREENSHOTS/$newFileName"
