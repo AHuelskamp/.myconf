@@ -72,9 +72,6 @@ set expandtab
 " Markdown command
 " Fix issue where *.md only highlights correctly when *.markdown
 autocmd BufRead,BufNew *.md set filetype=markdown
-" Set tabs to 2 spaces in .md
-" Set text width to 80
-autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 textwidth=80
 
 " cpp tabs
 autocmd FileType cpp setlocal shiftwidth=2 tabstop=2

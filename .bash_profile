@@ -49,11 +49,12 @@ alias cd..="cd .."
 alias path="echo $PATH"
 alias taill="tail -1" #last is a system command
 alias tt="ls -t | head"
-alias ttt="ls -t | head -1"
-#no spaces and then get rid of duplicate -'s
 alias cdd="cd .."
+alias oo="open ."
+cdl() { cd $1 && ls; }
+alias today='date +"%m/%d/%y"'
 
-# schenanigans (Do I need to bring in meme scripts?)
+# schenanigans
 alias http="python -m SimpleHTTPServer"
 alias rot13='tr "A-Za-z" "N-ZA-Mn-za-m"'
 alias e='tr e E'
@@ -63,52 +64,40 @@ if [[ -z $(hash pbcopy) ]]; then
     alias rr="echo 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' | pbcopy"
 fi
 
-# various locations
-STICKY=~/GitHub/my-notes/sticky.md
-NOTES=~/notes/
-
-alias notes="cd $NOTESDIR"
-alias vsticky="vim $STICKY"
-alias gsticky="cat $STICKY | grep"
-wsticky(){ echo $@ >> $STICKY;}
-ssticky(){ $SAVE $@; }
-
-
 # editing profile easily
 alias epro="vim ~/.bash_profile"
 alias ee="vim ~/.bash_profile"
 alias ss="source ~/.bash_profile"
 
-export DESK=~/Desktop/
-export DOWN=~/Downloads/
-export GITT=~/Github/
-export NOTES=~/notes/
-export SAND=~/Sandbox/
+# various locations
+export TESS_DESK=~/Desktop/
+export TESS_DOWN=~/Downloads/
+export TESS_GITT=~/Github/
+export TESS_NOTES=~/Notes/
+export TESS_STICKY=~/Sticky/
+export TESS_SAND=~/Sandbox/
+export TESS_SCREEN=~/Screenshots/
 
-alias desk="cd $DESK"
-alias down="cd $DOWN"
-alias odwon="open $ODOWN"
-alias gitt="cd $GITT"
-alias notes="cd $NOTES"
-alias sand="cd $SAND"
-
-alias oo="open ."
-
-cdl() {
-    cd $1 && ls
-}
-
-#default is overriden by further commands.
-
-#add home/bin if exists
-if [[ -d "/usr/local/sbin/" ]] ; then
-	PATH="${PATH}:/usr/local/sbin"
+if [[ -d $TESS_DESK && -d $TESS_DOWN && -d $TESS_GITT && -d $TESS_NOTES
+    && -d $TESS_STICKY && -d $TESS_SAND && -d $TESS_SCREEN ]]; then
+    alias desk="cd $TESS_DESK"
+    alias down="cd $TESS_DOWN"
+    alias odwon="open $TESS_DOWN"
+    alias gitt="cd $TESS_GITT"
+    alias notes="cd $TESS_NOTES"
+    alias sand="cd $TESS_SAND"
+    alias notes="cd $TESS_NOTES"
+    alias sticky="cd $TESS_STICKY"
+    alias home="cd ~"
+else
+    echo An expected directory is missing. Please fix system manually. >&2
 fi
+
 
 #add usr/local/sbin if exists
 if [[ -d "$HOME/bin" ]] ; then
-	PATH="${PATH}:$HOME/bin"
+    PATH="${PATH}:$HOME/bin"
 fi
 
-#git hub manage dot files
+# Manage dot files with git
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
