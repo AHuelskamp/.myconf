@@ -71,15 +71,17 @@ alias ss="source ~/.bash_profile"
 
 # various locations
 export TESS_DESK=~/Desktop/
+export TESS_DROP=~/Dropbox/
 export TESS_DOWN=~/Downloads/
 export TESS_GITT=~/Github/
 export TESS_NOTES=~/Notes/
 export TESS_STICKY=~/Sticky/
 export TESS_SAND=~/Sandbox/
 export TESS_SCREEN=~/Screenshots/
+export TESS_SCHOOL=~/School/
 
 if [[ -d $TESS_DESK && -d $TESS_DOWN && -d $TESS_GITT && -d $TESS_NOTES
-    && -d $TESS_STICKY && -d $TESS_SAND && -d $TESS_SCREEN ]]; then
+    && -d $TESS_STICKY && -d $TESS_SAND && -d $TESS_SCREEN && -d $TESS_DROP ]]; then
     alias desk="cd $TESS_DESK"
     alias down="cd $TESS_DOWN"
     alias odwon="open $TESS_DOWN"
@@ -88,7 +90,11 @@ if [[ -d $TESS_DESK && -d $TESS_DOWN && -d $TESS_GITT && -d $TESS_NOTES
     alias sand="cd $TESS_SAND"
     alias notes="cd $TESS_NOTES"
     alias sticky="cd $TESS_STICKY"
+    alias school="cd $TESS_SCHOOL"
+    alias skl="cd $TESS_SCHOOL"
     alias home="cd ~"
+    alias drop="cd $TESS_DROP"
+    alias screen="cd $TESS_SCREEN" # If I ever want to use the program screen, I'll have to rename this
 else
     echo An expected directory is missing. Please fix system manually. >&2
 fi
