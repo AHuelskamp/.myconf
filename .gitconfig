@@ -7,7 +7,7 @@
     email = tess.huelskamp@gmail.com
 [core]
     editor = vim
-    excludesfile = /Users/TessHuelskamp/.gitignore
+    excludesfile = /Users/tess/.gitignore
 [alias]
     a = add
     amend = commit --amend

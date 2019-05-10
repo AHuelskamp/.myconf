@@ -6,7 +6,7 @@ Since this setup is a litle bit different than a normal git setup, you need to u
 Right now, I'm working on refactoring my setup to work under a few different types of OSs (initially: MacOS and Ubuntu) so that I don't have to do anything when starting off on a new system :)
 
 # Setup
-* > Something usually goes wrong here. Have a healthy skepticism to these instructions :)
+* > Something usually goes wrong here. Have a healthy skepticism wrt to these instructions :)
 * Clone repo into a new directory
   * `cd ~ && git clone git@github.com:TessHuelskamp/.myconf.git temporary-storage`
 * Copy over the files you want.
@@ -20,18 +20,22 @@ Right now, I'm working on refactoring my setup to work under a few different typ
 * Source the `~/.bash_profile`
 * `config config status.showUntrackedFiles no`
   * > Now you need to manually add files (new ~/bin/exes`).
+* You might need to change the location of the gitignore if you username is different than your previous one :)
 
 # General New System Todos
 * Terminal configurations
   * Option as a meta key
 * Keyboard: CapsLock -> Esc
 * `defaults write com.apple.screencapture location AN_EXISTING_DIR`
-* `ln -s ~/ScreenShots ~/Desktop`
-  * > Also web receipts, Home
+    * > Or setup dbx to do this
 * New ssh key
   * Add to github
+  * Add to server
 * `cd ~; mkdir Sticky Notes Github Sandbox`
   * (Also clone notes and sticky repos)
+* Create pointers to frequenltly used files
+    * `ln -s ~/ScreenShots ~/Desktop`
+    * > Also Web Receipts, Home, Sandbox
 
 ## Mac
 * brew
