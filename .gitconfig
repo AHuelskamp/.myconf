@@ -4,7 +4,7 @@
     required = true
 [user]
     name = Tess Huelskamp
-    email = tess.huelskamp@gmail.com
+    email = tess@huelskamp.io
 [core]
     editor = vim
     excludesfile = /Users/tess/.gitignore
