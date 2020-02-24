@@ -86,6 +86,7 @@ if [[ -d $TESS_DESK && -d $TESS_DOWN && -d $TESS_GITT && -d $TESS_NOTES
     alias down="cd $TESS_DOWN"
     alias odwon="open $TESS_DOWN"
     alias gitt="cd $TESS_GITT"
+    alias code="cd $TESS_GITT"
     alias notes="cd $TESS_NOTES"
     alias sand="cd $TESS_SAND"
     alias notes="cd $TESS_NOTES"
@@ -105,5 +106,8 @@ if [[ -d "$HOME/bin" ]] ; then
     PATH="${PATH}:$HOME/bin"
 fi
 
+export PATH=/usr/local/opt/ruby/bin:$PATH
+
 # Manage dot files with git
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias please='sudo !!'
