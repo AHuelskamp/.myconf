@@ -10,10 +10,6 @@
     excludesfile = /Users/tess/.gitignore
 [alias]
 
-    # not working :( rip
-    # is-main="! branches=(\"master\" \"main\"); current_branch=$(git rev-parse --abbrev-ref HEAD); [[ \" ${branches[*]} \" =~ \" ${current_branch} \" ]] && echo git checkout -b $(pbpaste) || echo no;"
-
-
     a = add
     amend = commit --amend
     ammend = commit --amend
@@ -27,7 +23,10 @@
     gud = reset --hard HEAD
     last = log -1 HEAD
     lg = log --graph --pretty=format:'%Cred%h%C(yellow)%d %Cgreen%cr %Cblue%an%Creset %s' --date=relative --all
-    nb = "!git checkout -b $(pbpaste)"
+
+    nb = "!(currentBranch=$(git rev-parse --abbrev-ref HEAD); [ $currentBranch == 'master' ] || [ $currentBranch == 'main' ] ) && ( git checkout -b $(pbpaste) ) || echo 'Error: Not on main branch'"
+    nbb = "!git checkout -b $(pbpaste)"
+
     pu = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
     pushh = push --force
     rav = remote -v
