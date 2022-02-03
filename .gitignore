@@ -18,3 +18,8 @@ out
 *gz
 *out
 *.class
+
+
+# work stuff
+*work*
+*middesk*
