@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # FYI, to change the location of where apple writes your screenshots run:
-# `write com.apple.screencapture location $AN_EXISTING_DIR
+# `defaults write com.apple.screencapture location $AN_EXISTING_DIR`
 
 # $TESS_SCREEN shots is in an env var and is the location of where my screen shots are written
 
