@@ -1,45 +1,37 @@
-# How my dot files are managed:
-Following a thread I saw on the [internet](https://news.ycombinator.com/item?id=11070797) I put all of my config files under version control to easily begin working on new systems.
+# How I manage my dot files
 
-Since this setup is a litle bit different than a normal git setup, you need to un the alias `config` instead of `git`. Also, since the entire home directory is technically under version control, there's a few commands you should run (`config status -u`, _e.g._) unless you want to traverse your entire home directory :)
+Following a thread I saw on [hacker news](https://news.ycombinator.com/item?id=11070797), I put all of my config files and scripts under git to make setting up a new system easier.
 
-Right now, I'm working on refactoring my setup to work under a few different types of OSs (initially: MacOS and Ubuntu) so that I don't have to do anything when starting off on a new system :)
+Since this setup is a litle bit different than a normal git setup, you need to un the alias `config` instead of `git`. Also, since the entire home directory is technically under version control, there's a few commands you should **not** run (e..g, `config status -u`) unless you want to traverse your entire home directory :)
 
-# Setup
-* > Something usually goes wrong here. Have a healthy skepticism wrt to these instructions :)
-* Clone repo into a new directory
-  * `cd ~ && git clone git@github.com:TessHuelskamp/.myconf.git temporary-storage`
-* Copy over the files you want.
-  * `cp temporary-storage/.vimrc .`
-  * `cp temporary-storage/.ssh/config .ssh/config`
-* If you want to still keep the directory under version control, copy over the
-   `.git` folder and then follow the instructions above to source the `~/.bashrc` and begin working.
-  * `cp -r temporary-storage/.git ~/.myconf`
-* Ensure that this line (below) is sourced upon login (it should be already).
-  * `alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'`
-* Source the `~/.bash_profile`
-* `config config status.showUntrackedFiles no`
-  * > Now you need to manually add files (new ~/bin/exes`).
-* You might need to change the location of the gitignore if you username is different than your previous one :)
+# How to set up this repo up on an exisiting system
+
+> Something usually goes wrong here. Good luck :)
+
+1. Clone the git repo onto your computer.
+
+   > You can rm the `separate-git` flag if you don't want to keep things under version control.
+
+   `cd ~ && git clone --separate-git-dir=$HOME/.myconf git@github.com:TessHuelskamp/.myconf.git temp`
+
+1. Copy the files you want over into your home directory ( `cp temp/.ssh/config ~/.ssh/config` )
+1. Ensure that this line (below) is sourced in your login to tell git how to work with your home direcotry. This line should already be in your aliases file if you copied if over in an earlier step.
+   - `alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'`
+1. Source the `~/.aliases` file
+1. Configure your `config` git directory **not** to show untracked files by default (in this case the untracked files would be the entirity of your home directory :) )
+   `config config status.showUntrackedFiles no`
+   > Note that you'll need to manually add new files to this setup (e.g., any new `~/bin/exes` or `~/.configs` ).
 
 # General New System Todos
-* Terminal configurations
-  * Option as a meta key
-* Keyboard: CapsLock -> Esc
-* `defaults write com.apple.screencapture location AN_EXISTING_DIR`
-    * > Or setup dbx to do this
-* New ssh key
-  * Add to github
-  * Add to server
-* `cd ~; mkdir Sticky Notes Github Sandbox`
-  * (Also clone notes and sticky repos)
-* Create pointers to frequenltly used files
-    * `ln -s ~/ScreenShots ~/Desktop`
-    * > Also Web Receipts, Home, Sandbox
 
-## Mac
-* brew
-* Hot corner locks window
-  * Put display to sleep
-  * And then require password immediately after locking
-* java
+- Terminal configurations
+  - Option as a meta key
+- Keyboard: CapsLock -> Esc
+- `defaults write com.apple.screencapture location AN_EXISTING_DIR`
+- Add some desktop pointers to frequenltly used locations
+  - `ln -s ~/ScreenShots ~/Desktop`
+  - > Also the Sandbox
+- brew
+- Hot corner locks window
+  - Put display to sleep
+  - And then require password immediately after locking
