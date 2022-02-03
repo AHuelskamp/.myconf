@@ -22,6 +22,14 @@ Since this setup is a litle bit different than a normal git setup, you need to u
    `config config status.showUntrackedFiles no`
    > Note that you'll need to manually add new files to this setup (e.g., any new `~/bin/exes` or `~/.configs` ).
 
+# Note on difference between bash_profile and zshrc
+
+The latest mac update changed the default shell from bash to zsh. I switched over to zshrc as my main shell since I don't have a strong opinion between the two shells.
+
+I moved all of the aliases from `~/.bash_profile` into `~/.aliases` and had both the `~/.bash_profile` and `~/.zshrc` file source that aliases file.
+
+> **Note that this setup means that `~/.aliases` should be a terminal node in a `source` tree.** If you mess that up, speaking from experience, you'll create an infinite `source` loop that'll block you from logging into an interactive terminal shell :) (If you _do_ create a forever loop you can fix it by running `rm ~/.aliases` from a "New Command" window in `Terminal`)
+
 # General New System Todos
 
 - Terminal configurations
