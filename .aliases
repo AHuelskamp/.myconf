@@ -47,21 +47,21 @@ alias ss="source ~/.aliases"
 # TODO make this an array so that it's not all or one with these locations
 export TESS_DESK=~/Desktop/
 export TESS_DROP=~/Dropbox/
-export TESS_DOWN=~/Downloads/
-export TESS_GITT=~/Github/
+export TESS_DOWNLOADS=~/Downloads/
+export TESS_GIT=~/Github/
 export TESS_NOTES=~/Notes/
 export TESS_STICKY=~/Sticky/
 export TESS_SAND=~/Sandbox/
-export TESS_SCREEN=~/Screenshots/
+export TESS_SCREENSHOTS=~/Screenshots/
 export TESS_SCHOOL=~/School/
 
-if [[ -d $TESS_DESK && -d $TESS_DOWN && -d $TESS_GITT && -d $TESS_NOTES
-    && -d $TESS_STICKY && -d $TESS_SAND && -d $TESS_SCREEN && -d $TESS_DROP ]]; then
+if [[ -d $TESS_DESK && -d $TESS_DOWNLOADS && -d $TESS_GIT && -d $TESS_NOTES
+    && -d $TESS_STICKY && -d $TESS_SAND && -d $TESS_SCREENSHOTS && -d $TESS_DROP ]]; then
     alias desk="cd $TESS_DESK"
-    alias down="cd $TESS_DOWN"
-    alias odwon="open $TESS_DOWN"
-    alias gitt="cd $TESS_GITT"
-    alias code="cd $TESS_GITT"
+    alias down="cd $TESS_DOWNLOADS"
+    alias odwon="open $TESS_DOWNLOADS"
+    alias gitt="cd $TESS_GIT"
+    alias code="cd $TESS_GIT"
     alias notes="cd $TESS_NOTES"
     alias sand="cd $TESS_SAND"
     alias notes="cd $TESS_NOTES"
@@ -70,7 +70,7 @@ if [[ -d $TESS_DESK && -d $TESS_DOWN && -d $TESS_GITT && -d $TESS_NOTES
     alias skl="cd $TESS_SCHOOL"
     alias home="cd ~"
     alias drop="cd $TESS_DROP"
-    alias screen="cd $TESS_SCREEN" # If I ever want to use the program screen, I'll have to rename this
+    alias shott="cd $TESS_SCREENSHOTS"
 else
     echo An expected directory is missing. Please fix system manually. >&2
 fi
