@@ -14,23 +14,24 @@ Since this setup is a litle bit different than a normal git setup, you need to u
 
    `cd ~ && git clone --separate-git-dir=$HOME/.myconf git@github.com:TessHuelskamp/.myconf.git temp`
 
-1. Copy the files you want over into your home directory ( `cp temp/.ssh/config ~/.ssh/config` )
-1. Ensure that this line (below) is sourced in your login to tell git how to work with your home direcotry. This line should already be in your aliases file if you copied if over in an earlier step.
+1. Copy the files you want over into your home directory ( e.g., `cp temp/.aliases ~/.aliases` )
+1. Make sure that this line (below) is sourced in your login scripts so git knows how to interact with your home direcotry.
    - `alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'`
-1. Source the `~/.aliases` file
-1. Configure your `config` git directory **not** to show untracked files by default (in this case the untracked files would be the entirity of your home directory :) )
+   > **Note:** This line should already be in your `~/.aliases` file if you copied that over in an earlier step.
+1. `source` the `~/.aliases` file
+1. Configure your `config` git directory **not** to show untracked files by default (in this case those untracked files would be the entirity of your home directory :) )
    `config config status.showUntrackedFiles no`
-   > Note that you'll need to manually add new files to this setup (e.g., any new `~/bin/exes` or `~/.configs` ).
+   > **Note:** You'll need to remember to add any new files to this setup (e.g., any new `~/bin/exes` or `~/.configs`) because git won't prompt you to do that.
 
-# Note on difference between bash_profile and zshrc
+# Note on the difference between bash_profile and zshrc
 
 The latest mac update changed the default shell from bash to zsh. I switched over to zshrc as my main shell since I don't have a strong opinion between the two shells.
 
 I moved all of the aliases from `~/.bash_profile` into `~/.aliases` and had both the `~/.bash_profile` and `~/.zshrc` file source that aliases file.
 
-> **Note that this setup means that `~/.aliases` should be a terminal node in a `source` tree.** If you mess that up, speaking from experience, you'll create an infinite `source` loop that'll block you from logging into an interactive terminal shell :) (If you _do_ create a forever loop you can fix it by running `rm ~/.aliases` from a "New Command" window in `Terminal`)
+> **Note that this setup means that `~/.aliases` should be a terminal node in a `source` tree.** If you mess that up, speaking from experience :p , you'll create an infinite `source` loop that'll block you from logging into an interactive terminal shell :) (If you _do_ create a forever loop you can fix it by running `rm ~/.aliases` from a "New Command" window in `Terminal`)
 
-# General New System Todos
+# General new system TODOs
 
 - Terminal configurations
   - Option as a meta key
@@ -38,7 +39,7 @@ I moved all of the aliases from `~/.bash_profile` into `~/.aliases` and had both
 - `defaults write com.apple.screencapture location AN_EXISTING_DIR`
 - Add some desktop pointers to frequenltly used locations
   - `ln -s ~/ScreenShots ~/Desktop`
-  - > Also the Sandbox
+  - > Also the Sandbox & Downloads
 - brew
 - Hot corner locks window
   - Put display to sleep
