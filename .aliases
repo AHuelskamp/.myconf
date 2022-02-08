@@ -25,6 +25,9 @@ alias oo="open ."
 cdl() { cd $1 && ls; }
 alias today='date +"%m/%d/%y"'
 
+# only works on mac but w/e
+alias beep="echo -n -e \"\\a\\c\""
+
 # Manage dot files with git
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 alias confit=config
