@@ -20,6 +20,7 @@
     cm = commit -m
     co = checkout
     d = diff
+    difff = diff --name-only
     gud = reset --hard HEAD
     last = log -1 HEAD
     lg = log --graph --pretty=format:'%Cred%h%C(yellow)%d %Cgreen%cr %Cblue%an%Creset %s' --date=relative --all
