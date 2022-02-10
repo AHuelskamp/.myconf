@@ -48,7 +48,16 @@ alias epro="vim ~/.aliases"
 alias ss="source ~/.aliases"
 
 # various locations
-# TODO make this an array so that it's not all or one with these locations
+set_loc_alias(){
+    loc=$1
+    alias_string=$2
+
+    if [[ -d "$loc" ]]; then
+        alias $alias_string="cd $loc"
+        alias "o"$alias_string="open $loc"
+    fi
+}
+
 export TESS_DESK=~/Desktop/
 export TESS_DROP=~/Dropbox/
 export TESS_DOWNLOADS=~/Downloads/
@@ -59,26 +68,15 @@ export TESS_SAND=~/Sandbox/
 export TESS_SCREENSHOTS=~/Screenshots/
 export TESS_SCHOOL=~/School/
 
-if [[ -d $TESS_DESK && -d $TESS_DOWNLOADS && -d $TESS_GIT && -d $TESS_NOTES
-    && -d $TESS_STICKY && -d $TESS_SAND && -d $TESS_SCREENSHOTS && -d $TESS_DROP ]]; then
-    alias desk="cd $TESS_DESK"
-    alias down="cd $TESS_DOWNLOADS"
-    alias odwon="open $TESS_DOWNLOADS"
-    alias gitt="cd $TESS_GIT"
-    alias code="cd $TESS_GIT"
-    alias notes="cd $TESS_NOTES"
-    alias sand="cd $TESS_SAND"
-    alias notes="cd $TESS_NOTES"
-    alias sticky="cd $TESS_STICKY"
-    alias school="cd $TESS_SCHOOL"
-    alias skl="cd $TESS_SCHOOL"
-    alias home="cd ~"
-    alias drop="cd $TESS_DROP"
-    alias shott="cd $TESS_SCREENSHOTS"
-else
-    echo An expected directory is missing. Please fix system manually. >&2
-fi
-
+set_loc_alias $TESS_DESK "desk"
+set_loc_alias $TESS_DOWNLOAD "down"
+set_loc_alias $TESS_NOTES "notes"
+set_loc_alias $TESS_SAND "sand"
+set_loc_alias $TESS_SCHOOL "skl"
+set_loc_alias $TESS_SCHOOL "school"
+set_loc_alias $TESS_GIT "git"
+set_loc_alias "~" "home"
+set_loc_alias $TESS_SCREENSHOTS "shott"
 
 if [[ -d "$HOME/bin" ]] ; then
     PATH="${PATH}:$HOME/bin"
