@@ -3,6 +3,7 @@
 # Usage: current word with Xs and then valid letters
 # e.g. wordle XELLX "HOWRLD"
 
+import itertools
 import sys
 
 args = sys.argv[1:]
@@ -13,20 +14,15 @@ if len(args) != 2:
 
 word, letters = args
 word = word.upper()
-letters = set(letters.upper())
+letters = set(letters.upper()) | set(word)
 
 # for now, only working wiht 2 x's
-if word.count("X") != 2:
-    print('not a valid guess')
-    exit()
-
-
+numXs = word.count("X")
 wordToFormat = word.replace("X", "{}")
 
-# Could do this with a combination to make the number of X's change dynamically
-for x in letters:
-    for y in letters:
-        print(wordToFormat.format(x,y))
+
+for guess in itertools.combinations(letters, numXs):
+    print(wordToFormat.format(*guess))
 
 
 
