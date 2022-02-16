@@ -3,7 +3,7 @@
 # Usage: current word with Xs and then valid letters
 # e.g. wordle XELLX "HOWRLD"
 
-import itertools
+from itertools import combinations
 import sys
 
 args = sys.argv[1:]
@@ -16,13 +16,10 @@ word, letters = args
 word = word.upper()
 letters = set(letters.upper()) | set(word)
 
-# for now, only working wiht 2 x's
-numXs = word.count("X")
+# XELLX HOWRLD
+numMissing = word.count("X")
 wordToFormat = word.replace("X", "{}")
 
-
-for guess in itertools.combinations(letters, numXs):
+for guess in combinations(letters, numMissing):
     print(wordToFormat.format(*guess))
-
-
 
