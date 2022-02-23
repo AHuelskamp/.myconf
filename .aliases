@@ -70,7 +70,7 @@ export TESS_SCREEN=~/Screenshots/
 export TESS_SCHOOL=~/School/
 
 set_loc_alias $TESS_DESK "desk"
-set_loc_alias $TESS_DOWNLOAD "down"
+set_loc_alias $TESS_DOWNLOADS "down"
 set_loc_alias $TESS_NOTES "notes"
 set_loc_alias $TESS_SAND "sand"
 set_loc_alias $TESS_SCHOOL "skl"
