@@ -6,6 +6,18 @@
 from itertools import product
 import sys
 
+def getGuesses(word, letters):
+    numMissing = word.count("X")
+    wordToFormat = word.replace("X", "{}")
+
+    res = list()
+    for guess in product(letters, repeat=numMissing):
+        res.append(wordToFormat.format(*guess))
+
+    return res
+
+assert "VIVID" in getGuesses("XIXXD", {x for x in "QADZXVIJ"})
+
 args = sys.argv[1:]
 
 if len(args) != 2:
@@ -16,10 +28,5 @@ word, letters = args
 word = word.upper()
 letters = set(letters.upper()) | set(word)
 
-# XELLX HOWRLD
-numMissing = word.count("X")
-wordToFormat = word.replace("X", "{}")
-
-for guess in product(letters, repeat=numMissing):
-    print(wordToFormat.format(*guess))
-
+for guess in getGuesses():
+    print(guess)
