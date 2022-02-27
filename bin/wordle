@@ -28,5 +28,5 @@ word, letters = args
 word = word.upper()
 letters = set(letters.upper()) | set(word)
 
-for guess in getGuesses():
+for guess in getGuesses(word, letters):
     print(guess)
