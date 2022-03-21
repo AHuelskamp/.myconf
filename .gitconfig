@@ -11,6 +11,7 @@
 [alias]
 
     a = add
+    ac = "!git add -u && git commit -m"
     amend = commit --amend
     ammend = commit --amend
     bav = branch -av
@@ -19,6 +20,7 @@
     cb = rev-parse --abbrev-ref HEAD
     cm = commit -m
     co = checkout
+    cp = cherry-pick
     d = diff
     difff = diff --name-only
     gud = reset --hard HEAD
