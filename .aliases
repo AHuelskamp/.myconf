@@ -76,7 +76,7 @@ set_loc_alias $TESS_NOTES "notes"
 set_loc_alias $TESS_SAND "sand"
 set_loc_alias $TESS_SCHOOL "skl"
 set_loc_alias $TESS_SCHOOL "school"
-set_loc_alias $TESS_GIT "git"
+set_loc_alias $TESS_GIT "gitt"
 set_loc_alias "~" "home"
 set_loc_alias $TESS_SCREENSHOTS "shott"
 
